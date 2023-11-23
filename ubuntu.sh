@@ -3,6 +3,7 @@
 # envs
 USER_NAME=$(getent passwd 1000 | awk -F: '{print $1}')
 USER_HOME=$(getent passwd 1000 | cut -d: -f6)
+export DEBIAN_FRONTEND=noninteractive
 
 # install
 apt-get update && apt-get upgrade -y
