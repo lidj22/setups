@@ -14,7 +14,7 @@ sudo su -c 'wget -O develop.sh https://raw.githubusercontent.com/lidj22/setups/m
 
 Virtualization script
 ```sh
-sudo su -c 'wget -O ubuntu.sh https://raw.githubusercontent.com/lidj22/setups/main/ubuntu-22/virtualization.sh \
+sudo su -c 'wget -O virtualization.sh https://raw.githubusercontent.com/lidj22/setups/main/ubuntu-22/virtualization.sh \
     && chmod +x virtualization.sh \
     && ./virtualization.sh \
     && rm virtualization.sh'
