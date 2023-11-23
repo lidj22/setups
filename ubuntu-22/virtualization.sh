@@ -4,7 +4,9 @@ export DEBIAN_FRONTEND=noninteractive
 
 # virtualbox
 wget -O virtualbox.deb https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb \
-    && apt-get --fix-broken install virtualbox.deb \
+    && dpkg -i virtualbox.deb \
+    && apt-get --fix-broken \
+    && dpkg -i virtualbox.deb \
     && rm virtualbox.deb
 
 # vagrant
