@@ -11,6 +11,15 @@ apt-get install -y net-tools curl
 apt-get install -y btop htop
 apt-get install -y vim tmux
 
+# node
+apt-get install -y ca-certificates curl gnupg
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
+apt-get update
+apt-get install nodejs -y
+
 # python
 apt-get install -y python-is-python3 python3-pip
 python3 -m pip install virtualenv
@@ -32,7 +41,7 @@ systemctl start fail2ban
 apt-get install -y wireguard
 
 # docker (https://docs.docker.com/engine/install/ubuntu/)
-apt-get install -y ca-certificates curl gnupg
+# apt-get install -y ca-certificates curl gnupg
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 chmod a+r /etc/apt/keyrings/docker.gpg
