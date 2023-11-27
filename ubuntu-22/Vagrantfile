@@ -8,4 +8,6 @@ Vagrant.configure("2") do |config|
         sh /mnt/scripts/virtualization.sh
     SHELL
 
+    config.vm.provision :reload
+
 end

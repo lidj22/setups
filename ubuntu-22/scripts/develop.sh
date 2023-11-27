@@ -6,7 +6,8 @@ USER_HOME=$(getent passwd 1000 | cut -d: -f6)
 export DEBIAN_FRONTEND=noninteractive
 
 # install
-apt-get update && apt-get upgrade -y
+apt-get update
+# apt-get upgrade -y
 apt-get install -y net-tools curl
 apt-get install -y btop htop
 apt-get install -y vim tmux
@@ -52,3 +53,18 @@ echo \
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 usermod -aG docker $USER_NAME
+
+# nginx (https://nginx.org/en/linux_packages.html#Ubuntu)
+apt-get install -y curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
+  | tee /usr/share/keyrings/nginx-archive-keyring.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+  http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
+  | tee /etc/apt/sources.list.d/nginx.list
+echo "Package: *
+Pin: origin nginx.org
+Pin: release o=nginx
+Pin-Priority: 900
+" | tee /etc/apt/preferences.d/99nginx
+apt-get update
+apt-get install -y nginx
