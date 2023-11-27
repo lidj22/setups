@@ -21,3 +21,7 @@ sudo su -c 'wget -O virtualization.sh https://raw.githubusercontent.com/lidj22/s
 ```
 
 ### Vagrant
+
+```
+vagrant plugin install vagrant-reload
+```
