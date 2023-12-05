@@ -42,7 +42,7 @@ output = json" >> ~/.aws/config
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-nvidia-driver.html#nvidia-GRID-driver
 aws s3 cp --recursive s3://ec2-linux-nvidia-drivers/latest/ .
 chmod +x NVIDIA-Linux-x86_64*.run
-sudo /bin/sh ./NVIDIA-Linux-x86_64*.run
+sudo /bin/sh ./NVIDIA-Linux-x86_64*.run -s
 
 # install CUDA
 # https://developer.nvidia.com/cuda-12-1-0-download-archive
