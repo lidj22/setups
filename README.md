@@ -22,10 +22,15 @@ sudo su -c 'wget -O virtualization.sh https://raw.githubusercontent.com/lidj22/s
 
 CUDA scripts:
 ```sh
+# stage 1 script
 sudo su -c 'wget -O stage.1.sh https://raw.githubusercontent.com/lidj22/setups/main/ubuntu-22/scripts/aws.cuda/stage.1.sh \
     && chmod +x stage.1.sh \
     && ./stage.1.sh \
-    && rm stage.1.sh'
+    && rm stage.1.sh \
+    && reboot'
+# reboot
+
+# stage 2 script
 sudo su -c 'wget -O stage.2.sh https://raw.githubusercontent.com/lidj22/setups/main/ubuntu-22/scripts/aws.cuda/stage.2.sh \
     && chmod +x stage.2.sh \
     && ./stage.2.sh \
