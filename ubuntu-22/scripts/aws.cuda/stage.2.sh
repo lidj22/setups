@@ -55,8 +55,8 @@ cp /var/cuda-repo-ubuntu2204-12-1-local/cuda-*-keyring.gpg /usr/share/keyrings/
 apt-get update
 apt-get -y install cuda
 
-echo 'export PATH="/usr/local/cuda-12.1/bin:$PATH"' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH="/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+echo 'export PATH="/usr/local/cuda-12.1/bin:$PATH"' >> /home/ubuntu/.bashrc
+echo 'export LD_LIBRARY_PATH="/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH' >> /home/ubuntu/.bashrc
 
 # test
 nvidia-smi
