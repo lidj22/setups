@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# account requires S3 get permissions.
 read -p "Enter AWS Access Key ID: " AWS_ACCESS_KEY_ID
 read -p "Enter AWS Secret Access Key: " AWS_SECRET_ACCESS_KEY
 read -p "Enter AWS Default Region (e.g., us-east-1): " AWS_DEFAULT_REGION
