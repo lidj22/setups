@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # account requires S3 get permissions.
+read -p "Enter username: " USERNAME
 read -p "Enter AWS Access Key ID: " AWS_ACCESS_KEY_ID
 read -p "Enter AWS Secret Access Key: " AWS_SECRET_ACCESS_KEY
 read -p "Enter AWS Default Region (e.g., us-east-1): " AWS_DEFAULT_REGION
 
+export USERNAME
 export AWS_ACCESS_KEY_ID
 export AWS_SECRET_ACCESS_KEY
 export AWS_DEFAULT_REGION
@@ -56,8 +58,8 @@ cp /var/cuda-repo-ubuntu2204-12-1-local/cuda-*-keyring.gpg /usr/share/keyrings/
 apt-get update
 apt-get -y install cuda
 
-echo 'export PATH="/usr/local/cuda-12.1/bin:$PATH"' >> /home/ubuntu/.bashrc
-echo 'export LD_LIBRARY_PATH="/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH"' >> /home/ubuntu/.bashrc
+echo 'export PATH="/usr/local/cuda-12.1/bin:$PATH"' >> /home/$USERNAME/.bashrc
+echo 'export LD_LIBRARY_PATH="/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH"' >> /home/$USERNAME/.bashrc
 
 # test
 nvidia-smi
